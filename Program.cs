@@ -7,112 +7,47 @@ namespace Course
     {
         static void Main(string[] args)
         {
-            /*  string produto1 = "Computador";
-              string produto2 = "Mesa de escritório";
+            //Pessoa Mais velha
+             Pessoa p1, p2;
+             p1 = new Pessoa();
+             p2 = new Pessoa();
 
-              byte idade = 30;
-              int codigo = 5290;
-              char genero = 'M';
+             Console.WriteLine("Dados da primeira pessoa:");
+             p1.Nome = Console.ReadLine();
+             p1.Idade = int.Parse(Console.ReadLine());
 
-              double preco1 = 2100.0;
-              double preco2 = 650.50;
-              double medida = 53.234567;
+             Console.WriteLine("Dados da segunda pessoa:");
+             p2.Nome = Console.ReadLine();
+             p2.Idade = int.Parse(Console.ReadLine());
 
-              Console.WriteLine("Produtos:");
-              Console.WriteLine($"{produto1}, cujo preço é $ {preco1:F2}");
-              Console.WriteLine($"{produto2}, cujo preço é $ {preco2:F2}");
-              Console.WriteLine($"\nRegistro: {idade} anos de idade, código {codigo} e gênero: {genero}");
-              Console.WriteLine($"\nMedida com oito casas decimais: {medida}");
-              Console.WriteLine($"Arredondado (três casas decimais) : {medida:F3}");
-              Console.WriteLine("Separador decimal invariant culture: " + medida.ToString("F3", CultureInfo.InvariantCulture));
-
-              int teste = (int) preco1;
-              Console.WriteLine(teste);*/
-
-            /*  Console.WriteLine("Entre com seu nome Completo:");
-              string nome = Console.ReadLine();
-              Console.WriteLine("Quanto quartos tem na sua casa?");
-              int quartos = int.Parse(Console.ReadLine());
-              Console.WriteLine("Entre com o preço de um produto:");
-              double preco = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-              Console.WriteLine("Entre seu último nome, idade e altura (mesma linha)");
-              string[] vet = Console.ReadLine().Split(' ');
-              string ultimoNome = vet[0];
-              int idade = int.Parse(vet[1]);
-              string altura = vet[2].ToString(CultureInfo.InvariantCulture);
-
-              Console.WriteLine(nome);
-              Console.WriteLine(quartos);
-              Console.WriteLine(preco.ToString("F2", CultureInfo.InvariantCulture));
-              Console.WriteLine(ultimoNome);
-              Console.WriteLine(idade);
-              Console.WriteLine(altura.ToString(CultureInfo.InvariantCulture));*/
-
-            /* int a = 10, b = 11, c = 2;
-
-             int resultado = Maior(a, b, c);
-             Console.WriteLine(resultado);*/
-
-            /* int cnt = 0;
-             while(cnt <= 20)
+             if(p1.Idade > p2.Idade)
              {
-                 Console.WriteLine(cnt);
-                 cnt++;
-             }*/
-
-            /* for(int i= 0; i <= 20; i++)
+                 Console.WriteLine("O mais velho é : " + p1.Nome);
+             }
+             else if(p1.Idade < p2.Idade)
              {
-                 Console.WriteLine(i);
-             }*/
+                 Console.WriteLine("O mais velho é : " + p2.Nome);
+             }
+             else
+             {
+                 Console.WriteLine("Ambos tem a mesma idade!");
+             }
 
-            Triangulo x, y;
-            x = new Triangulo();
-            y = new Triangulo();
+            //Media salarios
+            Funcionario f1, f2;
+            f1 = new Funcionario();
+            f2 = new Funcionario();
+            Console.WriteLine("Dados do primeiro funcionario: ");
+            f1.Nome = Console.ReadLine();
+            f1.Salario = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
 
-            Console.WriteLine("Entre com as medidas do triangulo x : ");
-            x.A = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-            x.B = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-            x.C = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            Console.WriteLine("Dados do segundo funcionario: ");
+            f2.Nome = Console.ReadLine();
+            f2.Salario = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
 
-            Console.WriteLine("Entre com as medidas do triangulo y : ");
-            y.A = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-            y.B = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-            y.C = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            double mediaSal = (f1.Salario + f2.Salario) / 2.0;
 
-            double p = (x.A + x.B + x.C) / 2.0;
-            double areaX = Math.Sqrt(p * (p - x.A) * (p - x.B) * (p - x.C));
-
-            p = (y.A + y.B + y.C) / 2.0;
-            double areaY = Math.Sqrt(p * (p - y.A) * (p - y.B) * (p - y.C));
-
-            Console.WriteLine("Area de x = " + areaX.ToString("F4", CultureInfo.InvariantCulture));
-            Console.WriteLine("Area de y = " + areaY.ToString("F4", CultureInfo.InvariantCulture));
-
-            if(areaX > areaY)
-            {
-                Console.WriteLine("Maior area : " + areaX.ToString("F4", CultureInfo.InvariantCulture));
-            }
-            else
-            {
-                Console.WriteLine("Maior area : " + areaY.ToString("F4", CultureInfo.InvariantCulture));
-            }
+            Console.WriteLine(mediaSal.ToString("F2", CultureInfo.InvariantCulture));
         }
-
-        static int Maior(int a, int b, int c)
-        {
-            if(a > b && a > c)
-            {
-                return a;
-            }
-            else if(b > c)
-            {
-                return b;
-            }
-            else
-            {
-                return c;
-            }
-        }
-
     }
 }
