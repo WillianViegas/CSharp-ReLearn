@@ -7,47 +7,29 @@ namespace Course
     {
         static void Main(string[] args)
         {
-            //Pessoa Mais velha
-             Pessoa p1, p2;
-             p1 = new Pessoa();
-             p2 = new Pessoa();
+            Produto p1 = new Produto();
 
-             Console.WriteLine("Dados da primeira pessoa:");
-             p1.Nome = Console.ReadLine();
-             p1.Idade = int.Parse(Console.ReadLine());
+            Console.WriteLine("Entre com os dados do produto: ");
+            Console.Write("Nome:");
+            p1.Nome = Console.ReadLine();
+            Console.Write("Preço:");
+            p1.Preco = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            Console.Write("Quantidade:");
+            p1.Quantidade = int.Parse(Console.ReadLine());
 
-             Console.WriteLine("Dados da segunda pessoa:");
-             p2.Nome = Console.ReadLine();
-             p2.Idade = int.Parse(Console.ReadLine());
+            Console.WriteLine("Dados produto: " + p1);
 
-             if(p1.Idade > p2.Idade)
-             {
-                 Console.WriteLine("O mais velho é : " + p1.Nome);
-             }
-             else if(p1.Idade < p2.Idade)
-             {
-                 Console.WriteLine("O mais velho é : " + p2.Nome);
-             }
-             else
-             {
-                 Console.WriteLine("Ambos tem a mesma idade!");
-             }
+            Console.WriteLine("Digite o número de produtos a serem adicionados ao estoque: ");
+            int n = int.Parse(Console.ReadLine());
+            p1.AdicionarProdutos(n);
 
-            //Media salarios
-            Funcionario f1, f2;
-            f1 = new Funcionario();
-            f2 = new Funcionario();
-            Console.WriteLine("Dados do primeiro funcionario: ");
-            f1.Nome = Console.ReadLine();
-            f1.Salario = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            Console.WriteLine("Dados produto: " + p1);
 
-            Console.WriteLine("Dados do segundo funcionario: ");
-            f2.Nome = Console.ReadLine();
-            f2.Salario = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            Console.WriteLine("Digite o número de produtos a serem removidos do estoque: ");
+            n = int.Parse(Console.ReadLine());
+            p1.RemoverProdutos(n);
 
-            double mediaSal = (f1.Salario + f2.Salario) / 2.0;
-
-            Console.WriteLine(mediaSal.ToString("F2", CultureInfo.InvariantCulture));
+            Console.WriteLine("Dados produto: " + p1);
         }
     }
 }
