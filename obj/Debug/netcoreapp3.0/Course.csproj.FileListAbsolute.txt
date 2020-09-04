@@ -1,0 +1,11 @@
+C:\Users\willi\Documents\GitHub\ws-CSharp\Course\Course\bin\Debug\netcoreapp3.0\Course.exe
+C:\Users\willi\Documents\GitHub\ws-CSharp\Course\Course\bin\Debug\netcoreapp3.0\Course.deps.json
+C:\Users\willi\Documents\GitHub\ws-CSharp\Course\Course\bin\Debug\netcoreapp3.0\Course.runtimeconfig.json
+C:\Users\willi\Documents\GitHub\ws-CSharp\Course\Course\bin\Debug\netcoreapp3.0\Course.runtimeconfig.dev.json
+C:\Users\willi\Documents\GitHub\ws-CSharp\Course\Course\bin\Debug\netcoreapp3.0\Course.dll
+C:\Users\willi\Documents\GitHub\ws-CSharp\Course\Course\bin\Debug\netcoreapp3.0\Course.pdb
+C:\Users\willi\Documents\GitHub\ws-CSharp\Course\Course\obj\Debug\netcoreapp3.0\Course.csprojAssemblyReference.cache
+C:\Users\willi\Documents\GitHub\ws-CSharp\Course\Course\obj\Debug\netcoreapp3.0\Course.AssemblyInfoInputs.cache
+C:\Users\willi\Documents\GitHub\ws-CSharp\Course\Course\obj\Debug\netcoreapp3.0\Course.AssemblyInfo.cs
+C:\Users\willi\Documents\GitHub\ws-CSharp\Course\Course\obj\Debug\netcoreapp3.0\Course.dll
+C:\Users\willi\Documents\GitHub\ws-CSharp\Course\Course\obj\Debug\netcoreapp3.0\Course.pdb
