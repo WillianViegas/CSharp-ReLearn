@@ -15,10 +15,14 @@ namespace Course
         {
         }
 
-        public Produto(string nome, double preco, int quantidade)
+        public Produto(string nome, double preco)
         {
             _nome = nome;
             Preco = preco;
+        }
+
+        public Produto(string nome, double preco, int quantidade) : this(nome, preco)
+        {
             Quantidade = quantidade;
         }
 

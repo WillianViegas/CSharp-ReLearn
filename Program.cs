@@ -7,23 +7,27 @@ namespace Course
     {
         static void Main(string[] args)
         {
-            Point p;
-            p.x = 10;
-            p.y = 11;
-            Console.WriteLine(p);
+            int n = int.Parse(Console.ReadLine());
 
-            p = new Point();
-            Console.WriteLine(p);
+            Produto[] vect = new Produto[n];
 
+            for(int i = 0; i < vect.Length; i++)
+            {
+                string nome = Console.ReadLine();
+                double preco = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+                vect[i] = new Produto(nome, preco);
+            }
 
-            double? x = null;
-            double? y = 10;
+            double sum = 0.0;
 
-            double a = x ?? 5;
-            double b = y ?? 5;
+            for(int i = 0; i < n; i++)
+            {
+                sum += vect[i].Preco;
+            }
 
-            Console.WriteLine(a);
-            Console.WriteLine(b);
+            double avg = sum / n;
+
+            Console.WriteLine("Average Price = "  + avg.ToString("N2", CultureInfo.InvariantCulture));
         }
     }
 }
