@@ -7,29 +7,13 @@ namespace Course
     {
         static void Main(string[] args)
         {
-            /*Console.Write("Entre o valor do raio: ");
-            double raio = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            Produto p = new Produto("TV", 100, 1);
 
-            double circ = Calculadora.Circunferencia(raio);
-            double volume = Calculadora.Volume(raio);
+            p.Nome = "Tv 4k";
 
-            Console.WriteLine("Circunferencia: " + circ.ToString("F2", CultureInfo.InvariantCulture));
-            Console.WriteLine("Volume: " + volume.ToString("F2", CultureInfo.InvariantCulture));
-            Console.WriteLine("Pi: " + Calculadora.Pi.ToString("F2", CultureInfo.InvariantCulture));*/
-
-            /*  Console.Write("Cotacao dolar: ");
-              double dolar = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-              Console.Write("Quantos dolares vai comprar: ");
-              double real = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-
-              Console.WriteLine("Valor a ser pago em real : " 
-                  + ConversorDeMoeda.RealParaDolar(real, dolar).ToString("F2", CultureInfo.InvariantCulture));*/
-
-            Produto produto = new Produto("TV", 2000.00);
-
-            Console.WriteLine(produto);
-
-
+            Console.WriteLine(p.Nome);
+            Console.WriteLine(p.Quantidade);
+            Console.WriteLine(p.Preco);
         }
     }
 }
