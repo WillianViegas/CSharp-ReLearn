@@ -17,13 +17,17 @@ namespace Course
             Console.WriteLine("Volume: " + volume.ToString("F2", CultureInfo.InvariantCulture));
             Console.WriteLine("Pi: " + Calculadora.Pi.ToString("F2", CultureInfo.InvariantCulture));*/
 
-            Console.Write("Cotacao dolar: ");
-            double dolar = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-            Console.Write("Quantos dolares vai comprar: ");
-            double real = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            /*  Console.Write("Cotacao dolar: ");
+              double dolar = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+              Console.Write("Quantos dolares vai comprar: ");
+              double real = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
 
-            Console.WriteLine("Valor a ser pago em real : " 
-                + ConversorDeMoeda.RealParaDolar(real, dolar).ToString("F2", CultureInfo.InvariantCulture));
+              Console.WriteLine("Valor a ser pago em real : " 
+                  + ConversorDeMoeda.RealParaDolar(real, dolar).ToString("F2", CultureInfo.InvariantCulture));*/
+
+            Produto produto = new Produto("TV", 2000.00);
+
+            Console.WriteLine(produto);
 
 
         }
