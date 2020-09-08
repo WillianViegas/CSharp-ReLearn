@@ -8,41 +8,49 @@ namespace Course
     {
         static void Main(string[] args)
         {
-            List<string> list = new List<string>();
+            List<Employee> list = new List<Employee>();
+            Employee emp = new Employee();
 
-            list.Add("Maria");
-            list.Add("Alex");
-            list.Add("Bob");
-            list.Add("Anna");
-            list.Insert(2, "Marco");
+            Console.Write("How many employees will be registered?");
+            int n = int.Parse(Console.ReadLine());
 
-            list.RemoveAt(1);
-
-            foreach (string obj in list)
+            for(int i = 1; i <= n; i++)
             {
-                Console.WriteLine(obj);
-            }
-            Console.WriteLine("Count : " + list.Count);
+                Console.WriteLine("\nEmployer #" + i);
+                Console.Write("Id: ");
+                int id = int.Parse(Console.ReadLine());
+                Console.Write("Name: ");
+                string nome = Console.ReadLine();
+                Console.Write("Salary: ");
+                double salario = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+                emp = new Employee(id, nome, salario);
 
-            string s1 = list.Find(x => x[0] == 'A');
-            Console.WriteLine(s1);
-
-            string s2 = list.FindLast(x => x[0] == 'A');
-            Console.WriteLine("Last : " + s2);
-
-            int pos1 = list.FindIndex(x => x[0] == 'A');
-            Console.WriteLine("P1: " + pos1);
-
-            int pos2 = list.FindIndex(x => x[0] == 'A');
-            Console.WriteLine("P2: " + pos2);
-
-            List<string> list2 = list.FindAll(x => x.Length == 5);
-
-            foreach(string obj in list2)
-            {
-                Console.WriteLine("Lista 2: " + obj);
+                list.Add(emp);
             }
 
+            Console.Write("\nEnter the employee id that will have salary increase: ");
+            int idToIncreaseSalary = int.Parse(Console.ReadLine());
+
+           emp = list.Find(x => x.Id == idToIncreaseSalary);
+
+            if(emp != null)
+            {
+                Console.Write("\nEnter the percentage: ");
+                double percentage = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+                emp.increaseSalary(percentage);
+            }
+            else
+            {
+                Console.WriteLine("Id não existe!");
+            }
+
+           
+
+            Console.WriteLine("\nUpdated list of employees");
+            
+            foreach(Employee x in list){
+                Console.WriteLine(x);
+            }
         }
     }
 }
