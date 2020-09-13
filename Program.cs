@@ -8,49 +8,41 @@ namespace Course
     {
         static void Main(string[] args)
         {
-            List<Employee> list = new List<Employee>();
-            Employee emp = new Employee();
-
-            Console.Write("How many employees will be registered?");
             int n = int.Parse(Console.ReadLine());
 
-            for(int i = 1; i <= n; i++)
+            int[,] mat = new int[n, n];
+
+            for(int i =0; i < n; i++)
             {
-                Console.WriteLine("\nEmployer #" + i);
-                Console.Write("Id: ");
-                int id = int.Parse(Console.ReadLine());
-                Console.Write("Name: ");
-                string nome = Console.ReadLine();
-                Console.Write("Salary: ");
-                double salario = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-                emp = new Employee(id, nome, salario);
-
-                list.Add(emp);
+                string[] values = Console.ReadLine().Split(' ');
+                for(int j = 0; j < n; j++)
+                {
+                    mat[i, j] = int.Parse(values[j]);
+                }
             }
 
-            Console.Write("\nEnter the employee id that will have salary increase: ");
-            int idToIncreaseSalary = int.Parse(Console.ReadLine());
-
-           emp = list.Find(x => x.Id == idToIncreaseSalary);
-
-            if(emp != null)
+            Console.WriteLine("Main diagonal:");
+            for(int i = 0; i < n; i++)
             {
-                Console.Write("\nEnter the percentage: ");
-                double percentage = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-                emp.increaseSalary(percentage);
+                Console.Write(mat[i,i] + " ");
             }
-            else
+            Console.WriteLine();
+
+            int count = 0;
+
+            for(int i = 0; i < n; i++)
             {
-                Console.WriteLine("Id não existe!");
+                for(int j = 0; j < n; j++)
+                {
+                    if(mat[i, j] < 0)
+                    {
+                        count++;
+                    }
+                }
             }
 
-           
-
-            Console.WriteLine("\nUpdated list of employees");
-            
-            foreach(Employee x in list){
-                Console.WriteLine(x);
-            }
+            Console.WriteLine("Negative Numbers: ");
+            Console.WriteLine(count);
         }
     }
 }
